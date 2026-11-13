@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stokko - Chat</title>
+    <link rel="stylesheet" href="chat_seller.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+    <style>
+        html.is-premium .btn-premium-top,
+        html.is-premium .go-premium-card,
+        html.is-premium .btn-upgrade-now {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-logo">
+            <img src="../images/logoBlue.png" alt="STOKKO">
+            <span class="buyer-text">Seller</span>
+        </div>
+
+        <div class="header-right">
+            <button class="btn-premium-top">
+                <i class="fas fa-crown"></i>
+                Upgrade To premium
+            </button>
+
+            <div class="user-profile">
+                <img src="https://www.gravatar.com/avatar/?d=mp" alt="User" class="avatar">
+                <div class="user-info">
+                    <span class="user-name"></span>
+                    <span class="user-email"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <nav class="sidebar-menu">
+                <a href="../dashboard/dashboard_seller.html" class="menu-item">
+                    <i class="fas fa-th-large"></i>
+                    Dashboard
+                </a>
+                <a href="../listing/listing_seller.html" class="menu-item">
+                    <i class="fas fa-box"></i>
+                    Listings
+                </a>
+                <a href="../orders/orders_seller.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Orders
+                </a>
+                <a href="#" class="menu-item active">
+                    <i class="fas fa-comment"></i>
+                    Chat
+                </a>
+                <a href="../notification/notification_seller.html" class="menu-item">
+                    <i class="fas fa-bell"></i>
+                    Notification
+                </a>
+                <a href="../profilensubscription/subscription_seller.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+                <a href="../analytics/analytics_seller.html" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    Analytics
+                </a>
+            </nav>
+
+            <div class="go-premium-card">
+                <i class="fas fa-crown"></i>
+                <h3>Go Premium</h3>
+                <p>Unlock Analytics, Smart Pricing & more!</p>
+                <a href="../profilensubscription/subscription_seller.html" style="text-decoration: none;">
+                    <button class="btn-upgrade-now">
+                        Upgrade Now
+                    </button>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="chat-page">
+
+                <aside class="chat-conv-list" id="convList">
+                    <div class="chat-conv-header">
+                        <h2>Chat</h2>
+                    </div>
+                    <div id="convItems" class="conv-items">
+                        <p class="conv-empty">Memuat percakapan...</p>
+                    </div>
+                </aside>
+
+                <section class="chat-thread" id="chatThread">
+                    <div class="chat-thread-empty" id="threadEmptyState">
+                        <i class="far fa-comments"></i>
+                        <p>Pilih percakapan buat mulai chat</p>
+                    </div>
+
+                    <div class="chat-thread-active" id="threadActive" style="display:none;">
+                        <div class="chat-thread-header">
+                            <img src="https://www.gravatar.com/avatar/?d=mp" alt="" id="threadAvatar" class="thread-avatar">
+                            <div>
+                                <h3 id="threadName">-</h3>
+                                <span id="threadTyping" class="thread-typing" style="visibility:hidden;">mengetik...</span>
+                            </div>
+                        </div>
+
+                        <div class="chat-messages" id="chatMessages"></div>
+
+                        <form class="chat-input-bar" id="chatInputForm">
+                            <input type="text" id="chatInput" placeholder="Tulis pesan..." autocomplete="off">
+                            <button type="submit" id="chatSendBtn"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="chat_seller.js"></script>
+    <script src="../seller-header.js"></script>
+</body>
+</html>
