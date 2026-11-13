@@ -52,7 +52,7 @@ Buyers and sellers need more than just a place to list and purchase products —
 **Infrastructure**
 - Backend deployed on [Railway](https://railway.app)
 - Frontend deployed on [Vercel](https://vercel.com)
-- Database hosted on [Aiven](https://aiven.io)
+- Database hosted on [Railway](https://railway.app)
 
 ## Project Structure
 
@@ -120,7 +120,7 @@ CLIENT_URL=
 ```
 
 ### 4. Import the database schema
-Import `backend/src/db/stokko_db.sql` into your MySQL database.
+Import `backend/src/db/stokko.sql` into your MySQL database.
 
 ### 5. Run the backend
 ```bash
